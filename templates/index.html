@@ -6,10 +6,28 @@
 </head>
 <body>
 <h1>Macro Tracker</h1>
-<select name="restaurant" method="GET" action="/">
-    {% for restaurant in restaurants %}
-        <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
-    {% endfor %}
-</select>
+<div>
+
+    <p>Choose a restaurant to pick ingredients from:</p>
+    <br>
+    <select name="restaurant" method="GET" action="/">
+        {% for restaurant in restaurants %}
+            <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
+        {% endfor %}
+    </select>
+</div>
+<br>
+<div>
+    <table>
+        <td>
+            {% for row in chosen_ingreds %}
+                {% for item in offered_ingreds %}
+                    <br>
+                    <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
+            {% endfor %}
+        </td>
+        <a href='/add_row'><input type='button' value='Add Another Item'></a>
+</div>
+</table>
 </body>
 </html>
