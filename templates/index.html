@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Macro Tracker</title>
+</head>
+<body>
+<h1>Macro Tracker</h1>
+<select name="restaurant" method="GET" action="/">
+    {% for restaurant in restaurants %}
+        <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
+    {% endfor %}
+</select>
+</body>
+</html>
