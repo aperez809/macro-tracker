@@ -15,20 +15,17 @@ class API:
 
     def get_food_items(self, restaurant_id):
         return json.loads(requests.get("https://api.nutritionix.com/v1_1/brand",
-                     params={"appId": self.app_id,
-                             "appKey": self.app_key,
-                             "brand_ids": (restaurant_id)}).content)
+                     params={"id": restaurant_id,
+                             "appId": self.app_id,
+                             "appKey": self.app_key}).content)
 
 
     def get_food_items_v2(self, restaurant_name):
         return json.loads(requests.get(f"{self.base_url}/v2/search/instant",
                                        headers= {"x-app-id": self.app_id,
                                                  "x-app-key": self.app_key},
-                                       params={"query": ,
+                                       params={"query": restaurant_name,
                                                "brand_ids": (RESTAURANTS[restaurant_name])}).content)
-
-conn = API("c6065fe5", "e02df01235e480620daf9a737a4d520a")
-pprint(conn.get_food_items("Qdoba"))
 
 
 

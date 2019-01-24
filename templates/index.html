@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/static/static.css">
 <head>
     <meta charset="UTF-8">
-    <title>Macro Tracker</title>
+    <title>Macro Tracker Web App</title>
 </head>
 <body>
 <h1>Macro Tracker</h1>
 <div>
-
     <p>Choose a restaurant to pick ingredients from:</p>
     <br>
     <select name="restaurant" method="GET" action="/">
         {% for restaurant in restaurants %}
-            <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
+            <option value="{{restaurant}}" SELECTED>{{restaurants[0]}}</option>"
         {% endfor %}
     </select>
-</div>
-<br>
-<div>
-    <table>
-        <td>
-            {% for row in chosen_ingreds %}
-                {% for item in offered_ingreds %}
-                    <br>
-                    <option value="{{restaurant}}" SELECTED>{{restaurant}}</option>"
-            {% endfor %}
-        </td>
-        <a href='/add_row'><input type='button' value='Add Another Item'></a>
+
 </div>
 </table>
 </body>
